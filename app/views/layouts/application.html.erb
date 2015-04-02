@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag 'chameleonlogo.png' %>
   <title>Chameleon</title>
+  <style>
+    body {
+        background-image: url('chameleon-home-bg.jpg');
+        opacity: 0.6;
+      }
+    }
+  </style>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
