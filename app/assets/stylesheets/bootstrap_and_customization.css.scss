@@ -1,4 +1,12 @@
 $navbar-inverse-bg: #daece5;
-$navbar-inverse-link-color: #d2c0a8;
+$navbar-inverse-link-color: #AF951D;
 
 @import 'bootstrap';
+
+.navbar-text {
+  font-weight: bold;
+}
+
+a {
+  color: #AF951D
+}
