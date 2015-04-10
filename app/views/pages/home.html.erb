@@ -3,9 +3,8 @@
 <body>
   <div id="main-section">
     <div class="container">
-          <h1>The #1 destination <br>for crowdsourced <br> advertising campaigns.</h1>
-          <span id="print"><%= image_tag("PrintAds.png")%></span>
-        <a href="#" button type="button" class="btn btn-default btn-lg">Launch A Competition</a>
+        <h1>The #1 destination <br>for crowdsourced <br>advertising campaigns.<br><a href="#" button type="button" class="btn btn-default btn-lg">Launch A Competition</a></h1>
+        <span id="print"><%= image_tag("PrintAds.png")%></span>
     </div>
   </div>
 
@@ -13,7 +12,7 @@
     <div class ="container">
       <div class="text-center">
         <h1> One stop shop for all your campaign needs! </h1>
-        <ul class="ads_list">
+        <ul>
           <li>Tagline<br><span class="glyphicon glyphicon-comment"></span> </li>
           <li>Print<br><span class="glyphicon glyphicon-print"></span></li>
           <li>Commercial<br><span class="glyphicon glyphicon-film"></span></li>
@@ -29,7 +28,22 @@
   </div>
 
   <div id="third-section">
-
+    <div class="container">
+      <div class="text-center">
+        <ul>
+          <li id="step1">1. Launch a competition<br><p>Open up the opportunity for our copyrighters/designers<br> to unleash their creative minds on your desired advertising campaign.</p><%= image_tag('BambooLogo.png')%></li>
+          <li id="step2">2. Write a brief</br><p>Fill out our creative brief outline to tell our copyrighters/designers<br> everything they'll need to know to create a campaign for your product.</p><%= image_tag('CreativeBrief.png')%></li>
+          <li id="step3">3. Choose a campaign winner</br><p>After 7 days, pick out your favorite campaign and<br> declare the winner of your competition.</p><%= image_tag('BambooPrint.png')%></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
+  <div id="fourth-section">
+    <div class="container">
+      <div class="text-center">
+        <p>Site Created by Guy Hadas</p>
+      </div>
+    </div>
+  </div>
 </body>
