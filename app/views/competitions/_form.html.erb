@@ -1,0 +1,95 @@
+<div id="competitionformpage">
+  <%= form_for @competition, html: { multipart: true } do |f| %>
+    <% if @competition.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@competition.errors.count, "error") %> prohibited this competition from being saved:</h2>
+
+        <ul>
+        <% @competition.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div id="competitionform"
+      <div class="container">
+        <div class="jumbotron">
+            <div class="form-group">
+              <%= f.label "Logo" %>
+              <%= f.file_field :image %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Brand Name" %>
+              <%= f.text_field :brandname, placeholder: "Specify exactly how you want your brand to be titled throughout your campaign...", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f. label "Company Description" %>
+              <%= f.text_area :companydescription, placeholder: "Summarize what your company does...", rows: 10, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Target Audience" %>
+              <%= f.text_area :targetaudience, placeholder: "Clarify the exact demographics you are trying to reach in your campaign...", rows: 5, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Campaign Tone" %>
+              <%= f.text_area :campaigntone, placeholder: "Explain the emotional tone you are looking for in your campaign. Ex. Funny, Light-Hearted, Emotional...", rows: 5, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Budget for campaign" %>
+              <%= f.text_field :campaignbudget, placeholder: "Specify an estimate budget for your campaign.", class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Begin Date of Campaign" %>
+              <%= f.date_field :begindate , class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "End Date of Campaign" %>
+              <%= f.date_field :enddate, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Brief" %>
+              <%= f.text_area :brief, rows:40, placeholder: "Insert all your information here.", class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "Deliverables" %><br>
+              <div class="checkboxes">
+                <%= f.check_box :commercial %>
+                <%= label :commercial, "Commercial" %><br>
+                <%= f.check_box :print %>
+                <%= label :print, "Print" %><br>
+                <%= f.check_box :radio %>
+                <%= label :radio, "Radio" %><br>
+                <%= f.check_box :tagline %>
+                <%= label :tagline, "Tagline" %><br>
+                <%= f.check_box :socialmedia %>
+                <%= label :socialmedia, "Social Media" %><br>
+                <%= f.check_box :guerrilla %>
+                <%= label :guerrilla, "Guerrilla" %><br>
+                <%= f.check_box :mobile %>
+                <%= label :mobile, "Mobile" %><br>
+                <%= f.check_box :onlinebanner %>
+                <%= label :onlinebanner, "Web Banner" %><br>
+                <%= f.check_box :outofhome %>
+                <%= label :outofhome, "Out of Home" %><br>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="actions">
+                <button type="submit" class="btn btn-default btn-lg">Create Competition</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

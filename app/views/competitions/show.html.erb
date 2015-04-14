@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @competition.image.url(:medium) %>
+<%= @competition.brandname %>
+<%= @competition.targetaudience %>
+<%= @competition.companydescription %>
+<%= @competition.campaigntone %>
+<%= @competition.campaignbudget %>
+<%= @competition.begindate %>
+<%= @competition.enddate %>
+<%= @competition.brief %>
+<%= @competition.commercial %>
+<%= @competition.print %>
+<%= @competition.radio %>
+<%= @competition.tagline %>
+<%= @competition.socialmedia %>
+<%= @competition.guerrilla %>
+<%= @competition.mobile %>
+<%= @competition.onlinebanner %>
+<%= @competition.outofhome %>
+<%= link_to 'Edit', edit_competition_path(@competition) %> |
+<%= link_to 'Back', competitions_path %>

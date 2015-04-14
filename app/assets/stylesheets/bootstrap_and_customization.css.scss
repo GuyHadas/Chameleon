@@ -188,18 +188,47 @@ nav a:hover {
 
 
 
-#fourth-section {
+#footer {
   height:auto;
   background-color: #daece5;
 }
 
-#fourth-section .container {
+#footer .container {
   width:100%;
 }
 
-#fourth-section p {
+#footer p {
   padding:5px;
   margin-bottom:0px;
   float:left;
 
+}
+
+
+#competitionformpage {
+  background-image: url('chameleon-home-bg.png');
+}
+
+#competitionform .jumbotron {
+  margin: 25px;
+  background-color: #daece5;
+  border: solid 2px #87B4A2;
+}
+
+label {
+  color: #AF951D;
+  font-size: 18px;
+}
+
+.checkboxes label {
+  font-weight: 100;
+  color:black;
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.form-control {
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size: 16px;
 }

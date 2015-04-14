@@ -27,6 +27,10 @@ gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
+gem "paperclip", "~> 4.2"
+
+
+
 group :development, :test do
   gem 'sqlite3'
 end
