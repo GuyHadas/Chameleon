@@ -4,8 +4,10 @@
       <%= link_to image_tag(competition.image.url(:medium)), competition %>
         <div class="panel-body" id="competition-button">
           <h3><%= competition.brandname %></h3><br>
-          <%= link_to 'Edit', edit_competition_path(competition), class: "btn btn-md" %>
-          <%= link_to 'Destroy', competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class="panel-footer">
+            <%= link_to 'Edit', edit_competition_path(competition), class: "btn btn-md" %>
+            <%= link_to 'Destroy', competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
         </div>
     </div>
   <% end %>
