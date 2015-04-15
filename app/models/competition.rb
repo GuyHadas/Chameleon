@@ -9,4 +9,11 @@ class Competition < ActiveRecord::Base
   validates :begindate, presence:true
   validates :enddate, presence:true
   validates :brief, presence:true
+  validates :campaignbudget, presence:true, numericality: true
+
+  def campaignbudget=(num)
+  self[:campaignbudget] = num.to_s.scan(/\b-?[\d.]+/).join.to_f
+  end
+
+
 end

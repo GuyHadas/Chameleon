@@ -1,60 +1,13 @@
-<h1>Listing competitions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th> Brand Name </th>
-      <th> Logo </th>
-      <th> Target Market</th>
-      <th> Company Description </th>
-      <th> Desired Campaign Tone </th>
-      <th> Budget </th>
-      <th> Begin Date </th>
-      <th> End Date </th>
-      <th> Brief </th>
-      <th> Commercial </th>
-      <th> Print </th>
-      <th> Radio </th>
-      <th> Tagline </th>
-      <th> Social Media </th>
-      <th> Guerrilla </th>
-      <th> Mobile </th>
-      <th> Web Banner </th>
-      <th> Out of Home </th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @competitions.each do |competition| %>
-      <tr>
-        <td><%= competition.brandname %></td>
-        <td><%= image_tag competition.image.url(:medium) %></td>
-        <td><%= competition.targetaudience %></td>
-        <td><%= competition.companydescription %></td>
-        <td><%= competition.campaigntone %></td>
-        <td><%= competition.campaignbudget %></td>
-        <td><%= competition.begindate %></td>
-        <td><%= competition.enddate %></td>
-        <td><%= competition.brief %></td>
-        <td><%= competition.commercial %></td>
-        <td><%= competition.print %></td>
-        <td><%= competition.radio %></td>
-        <td><%= competition.tagline %></td>
-        <td><%= competition.socialmedia %></td>
-        <td><%= competition.guerrilla %></td>
-        <td><%= competition.mobile %></td>
-        <td><%= competition.onlinebanner %></td>
-        <td><%= competition.outofhome %></td>
-        <td><%= link_to 'Show', competition %></td>
-        <td><%= link_to 'Edit', edit_competition_path(competition) %></td><br>
-        <td><%= link_to 'Destroy', competition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div id="masonry-container" class="transitions-enabled">
+  <% @competitions.each do |competition| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(competition.image.url(:medium)), competition %>
+        <div class="panel-body" id="competition-button">
+          <h3><%= competition.brandname %></h3><br>
+          <%= link_to 'Edit', edit_competition_path(competition), class: "btn btn-md" %>
+          <%= link_to 'Destroy', competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+    </div>
+  <% end %>
+</div>
 <br>
-
-<%= link_to 'New Competition', new_competition_path %>
