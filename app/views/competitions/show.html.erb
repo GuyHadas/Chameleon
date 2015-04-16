@@ -1,22 +1,55 @@
-<p id="notice"><%= notice %></p>
+<div id="show-competition">
+  <p id="notice"><%= notice %></p>
+  <div class="container">
+    <div class="text-center">
+      <div class="jumbotron">
+        <table align="center">
+          <tr id="top-row">
+            <th>Company:</th>
+            <td><%= @competition.brandname %></td>
+          </tr>
+          <tr>
+            <th>Logo:</th>
+            <td><%= image_tag @competition.image.url(:medium) %></td>
+          </tr>
+          <tr>
+            <th>Description:</th>
+            <td><%=@competition.companydescription %></td>
+          </tr>
+          <tr>
+            <th>Target Audience:</th>
+            <td><%= @competition.targetaudience %></td>
+          </tr>
+          <tr>
+            <th>Campaign Tone:</th>
+            <td><%= @competition.campaigntone %></td>
+          </tr>
+          <tr>
+            <th>Campaign Budget:</th>
+            <td><%= @competition.campaignbudget %></td>
+          </tr>
+          <tr>
+            <th>Campaign Timeline:</th>
+            <td><%= @competition.begindate %> - <%=@competition.enddate %></td>
+          </tr>
+          <tr id="bottom-row">
+            <th>Brief:</th>
+            <td><%= @competition.brief %></td>
+          </tr>
+        </table>
+        <%= link_to 'Edit Competition', edit_competition_path(@competition), class: "btn btn-md"%>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= image_tag @competition.image.url(:medium) %>
-<%= @competition.brandname %>
-<%= @competition.targetaudience %>
-<%= @competition.companydescription %>
-<%= @competition.campaigntone %>
-<%= @competition.campaignbudget %>
-<%= @competition.begindate %>
-<%= @competition.enddate %>
-<%= @competition.brief %>
-<%= @competition.commercial %>
-<%= @competition.print %>
-<%= @competition.radio %>
-<%= @competition.tagline %>
-<%= @competition.socialmedia %>
-<%= @competition.guerrilla %>
-<%= @competition.mobile %>
-<%= @competition.onlinebanner %>
-<%= @competition.outofhome %>
-<%= link_to 'Edit', edit_competition_path(@competition) %> |
-<%= link_to 'Back', competitions_path %>
+
+<div id="campaigns-for-competition">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

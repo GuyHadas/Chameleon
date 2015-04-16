@@ -247,7 +247,6 @@ label {
 #masonry-container {
   margin: 0 auto;
   background-image: url('chameleon-home-bg.png');
-
 }
 
 .box {
@@ -255,7 +254,7 @@ label {
   margin:5px;
   display:inline-block;
   text-align:center;
-  border: solid black 1px;
+  border: solid #7f8c8d 1px;
   radius: 3px;
 }
 
@@ -266,7 +265,7 @@ label {
 
 .panel-body {
   width:100%;
-  border-top: solid black 1px;
+  border-top: solid #7f8c8d 1px;
   border-bottom: none;
   border-right: none;
   border-left: none;
@@ -285,8 +284,65 @@ label {
   padding:0px;
   background-color: white;
   width:100%;
-  border-top: solid black 1px;
+  border-top: solid #7f8c8d 1px;
   border-bottom: none;
   border-right: none;
   border-left: none;
+}
+
+
+
+
+#show-competition {
+  background-image: url('chameleon-home-bg.png');
+  width: 100%;
+  height:auto;
+  display:inline-block;
+}
+
+#show-competition .jumbotron {
+  border-radius:125px;
+  background-color:white;
+  margin:50px;
+
+}
+
+#show-competition table {
+  padding-top:25px;
+  table-layout:fixed;
+  width:100%;
+}
+
+#show-competition tr {
+  border-top: solid 1px #7f8c8d;
+}
+
+#show-competition th{
+  font-size: 36px;
+  padding-right: 10px;
+  text-align: center;
+  color: #87B4A2;
+  width: 300px;
+
+}
+
+#show-competition td {
+  padding: 30px;
+  text-align:center;
+  font-size:16px;
+  word-wrap:break-word;
+}
+
+#show-competition #top-row {
+  border-top: none;
+}
+
+#show-competition .jumbotron .btn {
+  margin-top:0px;
+}
+
+
+#campaigns-for-competition {
+  width:100%;
+  height:auto;
 }
