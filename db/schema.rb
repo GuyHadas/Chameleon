@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414070052) do
+ActiveRecord::Schema.define(version: 20150421062122) do
+
+  create_table "campaigns", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "competition_id"
+    t.text     "campaigntagline"
+    t.string   "campaignprint_file_name"
+    t.string   "campaignprint_content_type"
+    t.integer  "campaignprint_file_size"
+    t.datetime "campaignprint_updated_at"
+    t.string   "campaignsocialmedia_file_name"
+    t.string   "campaignsocialmedia_content_type"
+    t.integer  "campaignsocialmedia_file_size"
+    t.datetime "campaignsocialmedia_updated_at"
+    t.string   "campaignguerrilla_file_name"
+    t.string   "campaignguerrilla_content_type"
+    t.integer  "campaignguerrilla_file_size"
+    t.datetime "campaignguerrilla_updated_at"
+    t.string   "campaignmobile_file_name"
+    t.string   "campaignmobile_content_type"
+    t.integer  "campaignmobile_file_size"
+    t.datetime "campaignmobile_updated_at"
+    t.string   "campaignonlinebanner_file_name"
+    t.string   "campaignonlinebanner_content_type"
+    t.integer  "campaignonlinebanner_file_size"
+    t.datetime "campaignonlinebanner_updated_at"
+    t.string   "campaignoutofhome_file_name"
+    t.string   "campaignoutofhome_content_type"
+    t.integer  "campaignoutofhome_file_size"
+    t.datetime "campaignoutofhome_updated_at"
+    t.string   "campaignradio_file_name"
+    t.string   "campaignradio_content_type"
+    t.integer  "campaignradio_file_size"
+    t.datetime "campaignradio_updated_at"
+    t.string   "campaigncommercial_file_name"
+    t.string   "campaigncommercial_content_type"
+    t.integer  "campaigncommercial_file_size"
+    t.datetime "campaigncommercial_updated_at"
+  end
+
+  add_index "campaigns", ["competition_id"], name: "index_campaigns_on_competition_id"
 
   create_table "competitions", force: true do |t|
     t.datetime "created_at"

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :competitions
+
+  resources :competitions do
+    resources :campaigns
+  end
 
   root "pages#home"
 

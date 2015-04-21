@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @campaign.title %><br>
+  <strong>Tagline:</strong>
+  <%= @campaign.campaigntagline %><br>
+  <strong>Print:</strong>
+  <%= image_tag @campaign.campaignprint.url(:medium) %><br>
+  <strong>Social Media:</strong>
+  <%= image_tag @campaign.campaignsocialmedia.url(:medium) %><br>
+  <strong>Guerrilla:</strong>
+  <%= image_tag @campaign.campaignguerrilla.url(:medium) %><br>
+  <strong>Mobile:</strong>
+  <%= image_tag @campaign.campaignmobile.url(:medium) %><br>
+  <strong>Online Banner:</strong>
+  <%= image_tag @campaign.campaignonlinebanner.url(:medium) %><br>
+  <strong> Out of Home:</strong>
+  <%= image_tag @campaign.campaignoutofhome.url(:medium) %><br>
+  <strong> Radio:</strong>
+  <%= image_tag @campaign.campaignradio.url(:medium) %><br>
+  <strong> Commercial:</strong>
+  <%= video_tag @campaign.campaigncommercial.url, controls: true %><br>
+
+
+
+</p>
+
+<%= link_to 'Edit', edit_competition_campaign_path(@competition, @campaign) %> |
+<%= link_to 'Back', competition_campaigns_path %>

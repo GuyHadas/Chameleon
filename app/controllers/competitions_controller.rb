@@ -10,6 +10,7 @@ class CompetitionsController < ApplicationController
   # GET /competitions/1
   # GET /competitions/1.json
   def show
+    @campaigns = @competition.campaigns
   end
 
   # GET /competitions/new

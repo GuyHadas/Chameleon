@@ -1,0 +1,79 @@
+<div id="competitionformpage">
+  <%= form_for [@competition, @campaign] do |f| %>
+    <% if @campaign.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+        <ul>
+        <% @campaign.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div id="competitionform"
+      <div class="container">
+        <div class="jumbotron">
+          <span style= "float:right"><%= link_to 'Back to Competition', competition_campaigns_path(@competition) %></span>
+
+          <div class="field">
+            <%= f.label "Title" %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Tagline" %>
+            <%= f.text_field :campaigntagline, class: "form-control"  %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Print" %>
+            <%= f.file_field :campaignprint %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Social Media" %>
+            <%= f.file_field :campaignsocialmedia %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Guerrilla" %>
+            <%= f.file_field :campaignguerrilla %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Mobile" %>
+            <%= f.file_field :campaignmobile %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Online Banner" %>
+            <%= f.file_field :campaignonlinebanner %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Out of Home" %>
+            <%= f.file_field :campaignoutofhome %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Radio" %>
+            <%= f.file_field :campaignradio %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Commercial " %>
+            <%= f.file_field :campaigncommercial %>
+          </div>
+
+          <div class="text-center">
+            <div class="actions">
+              <button type="submit" class="btn btn-default btn-lg">Submit Campaign</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

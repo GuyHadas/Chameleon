@@ -46,6 +46,15 @@
 
 <div id="campaigns-for-competition">
   <br>
+  <% @campaigns.each do |campaign| %>
+    <%= campaign.title %>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to "Submit A Campaign", new_competition_campaign_path(@competition), class:"btn btn-md" %>
+  <%= link_to 'View Campaigns', competition_campaigns_path(@competition),  class:"btn btn-md" %>
+
+
   <br>
   <br>
   <br>

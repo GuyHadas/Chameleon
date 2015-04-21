@@ -31,6 +31,8 @@ GEM
     autoprefixer-rails (5.1.8)
       execjs
       json
+    av (0.9.0)
+      cocaine (~> 0.5.3)
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -73,6 +75,9 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paperclip-av-transcoder (0.6.4)
+      av (~> 0.9.0)
+      paperclip (>= 2.5.2)
     pg (0.18.1)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -146,6 +151,7 @@ DEPENDENCIES
   jquery-turbolinks
   masonry-rails
   paperclip (~> 4.2)
+  paperclip-av-transcoder
   pg
   rails (= 4.1.1)
   rails_12factor

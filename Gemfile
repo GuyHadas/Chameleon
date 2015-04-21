@@ -14,6 +14,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.3.4'
 gem "paperclip", "~> 4.2"
 gem 'masonry-rails'
+gem 'paperclip-av-transcoder'
+
 
 group :development, :test do
   gem 'sqlite3'
