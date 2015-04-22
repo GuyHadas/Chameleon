@@ -4,7 +4,7 @@ class CompetitionsController < ApplicationController
   # GET /competitions
   # GET /competitions.json
   def index
-    @competitions = Competition.all
+    @competitions = Competition.all.order("created_at DESC")
   end
 
   # GET /competitions/1

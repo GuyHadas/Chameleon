@@ -1,30 +1,31 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @campaign.title %><br>
-  <strong>Tagline:</strong>
-  <%= @campaign.campaigntagline %><br>
-  <strong>Print:</strong>
-  <%= image_tag @campaign.campaignprint.url(:medium) %><br>
-  <strong>Social Media:</strong>
-  <%= image_tag @campaign.campaignsocialmedia.url(:medium) %><br>
-  <strong>Guerrilla:</strong>
-  <%= image_tag @campaign.campaignguerrilla.url(:medium) %><br>
-  <strong>Mobile:</strong>
-  <%= image_tag @campaign.campaignmobile.url(:medium) %><br>
-  <strong>Online Banner:</strong>
-  <%= image_tag @campaign.campaignonlinebanner.url(:medium) %><br>
-  <strong> Out of Home:</strong>
-  <%= image_tag @campaign.campaignoutofhome.url(:medium) %><br>
-  <strong> Radio:</strong>
-  <%= image_tag @campaign.campaignradio.url(:medium) %><br>
-  <strong> Commercial:</strong>
-  <%= video_tag @campaign.campaigncommercial.url, controls: true %><br>
-
-
-
-</p>
-
-<%= link_to 'Edit', edit_competition_campaign_path(@competition, @campaign) %> |
-<%= link_to 'Back', competition_campaigns_path %>
+<div id="show-campaign">
+  <p id="notice"><%= notice %></p>
+  <div class="container">
+    <div class="text-center">
+      <div class="jumbotron">
+        <span style="float:right"><%= link_to 'Back to Campaigns', competition_campaigns_path %></span><br>
+        <%= link_to 'Edit Campaign', edit_competition_campaign_path(@competition, @campaign), class: "btn btn-md" %>
+        <p class="top-title">Title</p>
+        <span class="title"><%= @campaign.title %></span>
+        <p>Tagline</p>
+        <span class="title">" <%= @campaign.campaigntagline%>"</span>
+        <p>Print</p>
+        <%= image_tag @campaign.campaignprint.url %>
+        <p>Social Media</p>
+        <%= image_tag @campaign.campaignsocialmedia.url %>
+        <p>Guerrilla</p>
+        <%= image_tag @campaign.campaignguerrilla.url %>
+        <p>Mobile</p>
+        <%= image_tag @campaign.campaignmobile.url %>
+        <p>Online Banner</p>
+        <%= image_tag @campaign.campaignonlinebanner.url %>
+        <p> Out of Home</p>
+        <%= image_tag @campaign.campaignoutofhome.url %>
+        <p> Radio</p>
+        <%= image_tag @campaign.campaignradio.url %>
+        <p> Commercial</p>
+        <%= video_tag @campaign.campaigncommercial.url, controls: true %>
+      </div>
+    </div>
+  </div>
+</div>
