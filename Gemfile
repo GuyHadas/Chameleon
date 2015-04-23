@@ -15,13 +15,13 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem "paperclip", "~> 4.2"
 gem 'masonry-rails'
 gem 'paperclip-av-transcoder'
-
+gem "devise", "~> 3.4.1"
 
 group :development, :test do
-  gem 'sqlite3'
+  gem "sqlite3"
 end
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+  gem "pg"
+  gem "rails_12factor"
 end
