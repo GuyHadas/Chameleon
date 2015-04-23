@@ -255,7 +255,7 @@ label {
   display:inline-block;
   text-align:center;
   border: solid #7f8c8d 1px;
-  radius: 3px;
+  border-radius: 3px;
 }
 
 .box img {
@@ -342,12 +342,50 @@ label {
   margin-top:0px;
 }
 
+#show-competition ul {
+  display: inline-block;
+  font-weight:bold;
+  font-size:18px;
+  margin-top:35px;
+}
+
+#show-competition li {
+  float: left;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 20px;
+  list-style-type: none;
+}
+
+#show-competition ul .glyphicon {
+  font-size: 75px;
+  margin-top: 25px;
+  color: #87B4A2;
+  text-align:center;
+}
+
+#campaign-box {
+  width: 300px;
+}
+
+#campaign-box .panel-body {
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom:10px;
+}
+
 
 #campaigns-for-competition {
   width:100%;
   height:auto;
-  background-color: #ecf0f1;
+  background-color:#34495e;
 }
+
+#campaigns-for-competition .btn {
+  margin-bottom:30px;
+
+}
+
 
 
 
@@ -386,8 +424,4 @@ label {
 #show-campaign .jumbotron video {
   height:auto;
   width:75%
-}
-
-#show-campaign .jumbotron .btn {
-  margin-top:0px;
 }

@@ -6,6 +6,10 @@ class CampaignsController < ApplicationController
   def index
     @competition = Competition.find(params[:competition_id])
     @campaigns = @competition.campaigns
+
+    respond_to do |format|
+      format.html { redirect_to competition_path(@competition) }
+    end
   end
 
   # GET /campaigns/1
@@ -81,6 +85,6 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:title, :competition_id, :campaigntagline, :campaignprint, :campaignsocialmedia, :campaignguerrilla, :campaignmobile, :campaignonlinebanner, :campaignoutofhome, :campaignradio, :campaigncommercial)
+      params.require(:campaign).permit(:title, :competition_id, :campaigntagline, :campaignprint, :campaignsocialmedia, :campaignguerrilla, :campaignmobile, :campaignonlinebanner, :campaignoutofhome, :campaignradio, :campaigncoverphoto, :campaigncommercial)
     end
 end

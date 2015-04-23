@@ -4,7 +4,6 @@
     <div class="text-center">
       <div class="jumbotron">
         <span style="float:right"><%= link_to 'Back to Campaigns', competition_campaigns_path %></span><br>
-        <%= link_to 'Edit Campaign', edit_competition_campaign_path(@competition, @campaign), class: "btn btn-md" %>
         <p class="top-title">Title</p>
         <span class="title"><%= @campaign.title %></span>
         <p>Tagline</p>
@@ -24,8 +23,10 @@
         <p> Radio</p>
         <%= image_tag @campaign.campaignradio.url %>
         <p> Commercial</p>
-        <%= video_tag @campaign.campaigncommercial.url, controls: true %>
-      </div>
+        <%= video_tag @campaign.campaigncommercial.url, controls: true %><br>
+        <%= link_to 'Edit Campaign', edit_competition_campaign_path(@competition, @campaign), class: "btn btn-md" %>
+        <%= link_to 'Remove Campaign', @competition_campaign, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>  
+    </div>
     </div>
   </div>
 </div>

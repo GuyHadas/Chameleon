@@ -21,52 +21,87 @@
             <%= f.label "Title" %>
             <%= f.text_field :title, class: "form-control" %>
           </div>
+
           <br>
+
           <div class="field">
-            <%= f.label "Tagline" %>
-            <%= f.text_field :campaigntagline, class: "form-control"  %>
+            <%= f.label "Cover Photo" %>
+            <%= f.file_field :campaigncoverphoto %>
           </div>
+
           <br>
-          <div class="field">
-            <%= f.label "Print" %>
-            <%= f.file_field :campaignprint %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label "Social Media" %>
-            <%= f.file_field :campaignsocialmedia %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label "Guerrilla" %>
-            <%= f.file_field :campaignguerrilla %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label "Mobile" %>
-            <%= f.file_field :campaignmobile %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label "Online Banner" %>
-            <%= f.file_field :campaignonlinebanner %>
-          </div>
-          <br>
+          <% if @competition.tagline %>
+            <div class="field">
+              <%= f.label "Tagline" %>
+              <%= f.text_field :campaigntagline, class: "form-control"  %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.print %>
+            <div class="field">
+              <%= f.label "Print" %>
+              <%= f.file_field :campaignprint %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.socialmedia %>
+            <div class="field">
+              <%= f.label "Social Media" %>
+              <%= f.file_field :campaignsocialmedia %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.guerrilla %>
+            <div class="field">
+              <%= f.label "Guerrilla" %>
+              <%= f.file_field :campaignguerrilla %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.mobile %>
+            <div class="field">
+              <%= f.label "Mobile" %>
+              <%= f.file_field :campaignmobile %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.onlinebanner %>
+            <div class="field">
+              <%= f.label "Online Banner" %>
+              <%= f.file_field :campaignonlinebanner %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.outofhome %>
           <div class="field">
             <%= f.label "Out of Home" %>
             <%= f.file_field :campaignoutofhome %>
           </div>
           <br>
-          <div class="field">
-            <%= f.label "Radio" %>
-            <%= f.file_field :campaignradio %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label "Commercial " %>
-            <%= f.file_field :campaigncommercial %>
-          </div>
-          <br>
+          <% end %>
+
+          <% if @competition.radio %>
+            <div class="field">
+              <%= f.label "Radio" %>
+              <%= f.file_field :campaignradio %>
+            </div>
+            <br>
+          <% end %>
+
+          <% if @competition.commercial %>
+            <div class="field">
+              <%= f.label "Commercial " %>
+              <%= f.file_field :campaigncommercial %>
+            </div>
+            <br>
+          <% end %>
+
           <div class="text-center">
             <div class="actions">
               <button type="submit" class="btn btn-default btn-lg">Submit Campaign</button>

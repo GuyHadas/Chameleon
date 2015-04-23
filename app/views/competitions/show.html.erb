@@ -32,12 +32,47 @@
             <th>Campaign Timeline:</th>
             <td><%= @competition.begindate %> - <%=@competition.enddate %></td>
           </tr>
+          <tr>
+            <th>Campaign Needs:</th>
+            <td>
+              <ul>
+                <% if @competition.tagline %>
+                  <li>Tagline<br><span class="glyphicon glyphicon-comment"></span></li>
+                <% end %>
+                <% if @competition.print %>
+                  <li>Print<br><span class="glyphicon glyphicon-print"></span></li>
+                <% end %>
+                <% if @competition.socialmedia %>
+                  <li>Social Media<br><span class="glyphicon glyphicon-thumbs-up"></span></li>
+                <% end %>
+                <% if @competition.commercial %>
+                  <li>Commercial<br><span class="glyphicon glyphicon-film"></span></li>
+                <% end %>
+                <% if @competition.guerrilla %>
+                  <li>Guerrilla<br><span class="glyphicon glyphicon-bullhorn"></span></li>
+                <% end %>
+                <% if @competition.mobile %>
+                  <li>Mobile<br><span class="glyphicon glyphicon-phone"></span></li>
+                <% end %>
+                <% if @competition.radio %>
+                  <li>Radio<br><span class="glyphicon glyphicon-volume-up"></span></li>
+                <% end %>
+                <% if @competition.outofhome %>
+                  <li>Out of Home<br><span class="glyphicon glyphicon-home"></span></li>
+                <% end %>
+                <% if @competition.outofhome %>
+                  <li>Online Banner<br><span class="glyphicon glyphicon-flag"></span></li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
           <tr id="bottom-row">
             <th>Brief:</th>
             <td><%= @competition.brief %></td>
           </tr>
         </table>
         <%= link_to 'Edit Competition', edit_competition_path(@competition), class: "btn btn-md"%>
+        <%= link_to 'Remove Competition', @competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
   </div>
@@ -45,20 +80,17 @@
 
 
 <div id="campaigns-for-competition">
-  <br>
-  <% @campaigns.each do |campaign| %>
-    <%= campaign.title %>
-  <% end %>
-  <br>
-  <br>
-  <%= link_to "Submit A Campaign", new_competition_campaign_path(@competition), class:"btn btn-md" %>
-  <%= link_to 'View Campaigns', competition_campaigns_path(@competition),  class:"btn btn-md" %>
-
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <div class="text-center">
+      <br>
+      <% @campaigns.each do |campaign| %>
+        <div class="box panel panel-default" id="campaign-box">
+          <%= link_to image_tag(campaign.campaigncoverphoto.url(:medium)), competition_campaign_path(@competition, campaign) %>
+          <div class="panel-body">
+            " <%= campaign.campaigntagline%>"
+          </div>
+        </div>
+      <% end %>
+      <br>
+      <%= link_to "Submit A Campaign", new_competition_campaign_path(@competition), class:"btn btn-md" %>
+    </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421062122) do
+ActiveRecord::Schema.define(version: 20150422215415) do
 
   create_table "campaigns", force: true do |t|
     t.string   "title"
@@ -51,6 +51,10 @@ ActiveRecord::Schema.define(version: 20150421062122) do
     t.string   "campaigncommercial_content_type"
     t.integer  "campaigncommercial_file_size"
     t.datetime "campaigncommercial_updated_at"
+    t.string   "campaigncoverphoto_file_name"
+    t.string   "campaigncoverphoto_content_type"
+    t.integer  "campaigncoverphoto_file_size"
+    t.datetime "campaigncoverphoto_updated_at"
   end
 
   add_index "campaigns", ["competition_id"], name: "index_campaigns_on_competition_id"
