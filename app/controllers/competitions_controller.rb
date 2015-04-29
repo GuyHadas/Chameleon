@@ -11,11 +11,12 @@ class CompetitionsController < ApplicationController
   # GET /competitions/1.json
   def show
     @campaigns = @competition.campaigns
+    @competition = User.find(params[:user_id])
   end
 
   # GET /competitions/new
   def new
-    @competition = Competition.new
+    @competition = current_user.competitions.build
   end
 
   # GET /competitions/1/edit
@@ -25,7 +26,7 @@ class CompetitionsController < ApplicationController
   # POST /competitions
   # POST /competitions.json
   def create
-    @competition = Competition.new(competition_params)
+    @competition = current_user.competitions.build(params[:competition])
 
     respond_to do |format|
       if @competition.save
@@ -70,6 +71,6 @@ class CompetitionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def competition_params
-      params.require(:competition).permit(:image, :brandname, :targetaudience, :companydescription, :campaigntone, :campaignbudget, :begindate, :enddate, :brief, :commercial, :print, :radio, :tagline, :socialmedia, :guerrilla, :mobile, :onlinebanner, :outofhome)
+      params.require(:competition).permit(:image, :brandname, :targetaudience, :companydescription, :campaigntone, :campaignbudget, :begindate, :enddate, :brief, :commercial, :print, :radio, :tagline, :socialmedia, :guerrilla, :mobile, :onlinebanner, :outofhome, :user_id)
     end
 end

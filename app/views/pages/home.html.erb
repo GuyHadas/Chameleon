@@ -3,7 +3,13 @@
 <body>
   <div id="main-section">
     <div class="container">
-        <h1>The #1 destination <br>for crowdsourced <br>advertising campaigns.<br><a href= "competitions/new" button type="button" class="btn btn-default btn-lg">Launch A Competition</a></h1>
+        <h1>The #1 destination <br>for crowdsourced <br>advertising campaigns.<br>
+          <% if user_signed_in? %>
+            <%= link_to "Launch A Competition", new_competition_path, class: "btn btn-default btn-lg" %>
+          <% else %>
+            <%= link_to "Register Now", new_user_registration_path, class: "btn btn-default btn-lg" %>
+          <% end %>
+        </h1>
         <span id="print"><%= image_tag("PrintAds.png")%></span>
     </div>
   </div>

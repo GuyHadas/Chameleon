@@ -1,5 +1,4 @@
 $navbar-inverse-bg: #daece5;
-$navbar-inverse-link-color: #AF951D;
 
 @import "bootstrap-sprockets";
 @import 'bootstrap';
@@ -40,15 +39,19 @@ $navbar-inverse-link-color: #AF951D;
   margin-bottom: 0;
 }
 
-nav a {
-  color: #AF951D;
-  font-family: arial;
-  font-weight: bold;
-}
-
 nav a:hover {
   text-decoration: none;
 }
+
+#navlist a {
+  color: #AF951D;
+  font-family: arial;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
 
 #navlist a:hover {
   display: inline-block;
@@ -218,6 +221,7 @@ nav a:hover {
   margin: 25px;
   background-color: #daece5;
   border: solid 2px #87B4A2;
+  border-radius: 125px;
 }
 
 label {
@@ -288,6 +292,7 @@ label {
   border-right: none;
   border-left: none;
 }
+
 
 
 
@@ -423,4 +428,34 @@ label {
 #show-campaign .jumbotron video {
   height:auto;
   width:75%
+}
+
+
+
+
+#registration-form {
+  background-image: url('chameleon-home-bg.png');
+  width: 100%;
+  height:auto;
+  display:inline-block;
+}
+
+#registration-form .jumbotron {
+  border-radius:125px;
+  background-color: #daece5;
+  border: solid 2px #87B4A2;
+  margin:50px;
+}
+
+#registration-form .btn {
+  margin-top:20px;
+}
+
+
+
+
+
+
+#delete_account_button .btn {
+  background-color: #dfc5c8;
 }

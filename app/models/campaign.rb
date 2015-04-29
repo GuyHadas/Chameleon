@@ -1,5 +1,6 @@
 class Campaign < ActiveRecord::Base
   belongs_to :competition
+  belongs_to :user
 
   has_attached_file :campaignprint, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :campaignprint, :content_type => /\Aimage\/.*\Z/
