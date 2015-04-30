@@ -11,7 +11,7 @@ class CompetitionsController < ApplicationController
   # GET /competitions/1.json
   def show
     @campaigns = @competition.campaigns
-    @competition = User.find(params[:user_id])
+    @competition = Competition.find(params[:id])
   end
 
   # GET /competitions/new
@@ -26,7 +26,7 @@ class CompetitionsController < ApplicationController
   # POST /competitions
   # POST /competitions.json
   def create
-    @competition = current_user.competitions.build(params[:competition])
+    @competition = current_user.competitions.build(competition_params)
 
     respond_to do |format|
       if @competition.save

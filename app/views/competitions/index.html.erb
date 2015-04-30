@@ -5,7 +5,7 @@
       <div class="box panel panel-default">
         <%= link_to image_tag(competition.image.url(:medium)), competition %>
           <div class="panel-body" id="competition-button">
-            <h3><%= competition.brandname %></h3><br>
+            <h3><%= competition.brandname %></h3>
             <div class="panel-footer">
               <%= link_to 'Edit', edit_competition_path(competition), class: "btn btn-md" %>
               <%= link_to 'Remove', competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
