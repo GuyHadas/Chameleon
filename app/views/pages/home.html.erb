@@ -5,7 +5,11 @@
     <div class="container">
         <h1>The #1 destination <br>for crowdsourced <br>advertising campaigns.<br>
           <% if user_signed_in? %>
-            <%= link_to "Launch A Competition", new_competition_path, class: "btn btn-default btn-lg" %>
+            <% if current_user && current_user.typeofuser == "Company" %>
+              <%= link_to "Launch A Competition", new_competition_path, class: "btn btn-default btn-lg" %>
+            <% else %>
+              <%= link_to "View Competitions", competitions_path, class: "btn btn-default btn-lg" %>
+            <% end %>
           <% else %>
             <%= link_to "Register Now", new_user_registration_path, class: "btn btn-default btn-lg" %>
           <% end %>

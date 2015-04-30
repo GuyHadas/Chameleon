@@ -1,8 +1,8 @@
 <div id="show-competition">
-  <p id="notice"><%= notice %></p>
   <div class="container">
     <div class="text-center">
       <div class="jumbotron">
+        <span style="float:right"><%= link_to 'Back to Competitions', competitions_path %></span><br>
         <table align="center">
           <tr id="top-row">
             <th>Company:</th>
@@ -71,8 +71,10 @@
             <td><%= @competition.brief %></td>
           </tr>
         </table>
-        <%= link_to 'Edit Competition', edit_competition_path(@competition), class: "btn btn-md"%>
-        <%= link_to 'Remove Competition', @competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if current_user && @competition.user == current_user %>
+          <%= link_to 'Edit Competition', edit_competition_path(@competition), class: "btn btn-md"%>
+          <%= link_to 'Remove Competition', @competition, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -86,11 +88,14 @@
         <div class="box panel panel-default" id="campaign-box">
           <%= link_to image_tag(campaign.campaigncoverphoto.url(:medium)), competition_campaign_path(@competition, campaign) %>
           <div class="panel-body">
-            " <%= campaign.campaigntagline%>"
+            <%= campaign.user.name%>
           </div>
         </div>
       <% end %>
       <br>
-      <%= link_to "Submit A Campaign", new_competition_campaign_path(@competition), class:"btn btn-md" %>
+      <br>
+      <% if current_user && current_user.typeofuser == "Advertiser" %>
+        <%= link_to "Submit A Campaign", new_competition_campaign_path(@competition), class:"btn btn-md" %>
+      <% end %>
     </div>
 </div>

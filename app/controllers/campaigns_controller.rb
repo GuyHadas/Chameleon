@@ -35,7 +35,7 @@ class CampaignsController < ApplicationController
   # POST /campaigns.json
   def create
     @competition = Competition.find(params[:competition_id])
-    @campaign = @competition.campaigns.build(campaign_params)
+    @campaign = @competition.campaigns.where(user_id: current_user.id).build(campaign_params)
 
 
     respond_to do |format|

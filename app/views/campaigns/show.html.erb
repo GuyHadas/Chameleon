@@ -1,6 +1,4 @@
-<h1><%= @campaign.user_id %></h1>
 <div id="show-campaign">
-  <p id="notice"><%= notice %></p>
   <div class="container">
     <div class="text-center">
       <div class="jumbotron">
@@ -25,9 +23,15 @@
         <%= image_tag @campaign.campaignradio.url %>
         <p> Commercial</p>
         <%= video_tag @campaign.campaigncommercial.url, controls: true %><br>
-        <%= link_to 'Edit Campaign', edit_competition_campaign_path(@competition, @campaign), class: "btn btn-md" %>
-        <%= link_to 'Remove Campaign', @competition_campaign, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
+        <% if current_user && @campaign.user == current_user %>
+          <%= link_to 'Edit Campaign', edit_competition_campaign_path(@competition, @campaign), class: "btn btn-md" %>
+          <%= link_to 'Remove Campaign', @competition_campaign, class: "btn btn-md", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <h5>Campaign Created By: <%= @campaign.user.name %></h5>
+      </div>
     </div>
   </div>
 </div>

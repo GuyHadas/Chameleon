@@ -19,7 +19,11 @@
       <ul class="nav navbar-nav navbar-right" id="navlist">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to 'View Competitions', competitions_path %></li>
-          <li><%= link_to 'Create Competition', new_competition_path %></li>
+          <li>
+            <% if current_user && current_user.typeofuser == "Company" %>
+              <%= link_to 'Create Competition', new_competition_path %>
+            <% end %>
+          </li>
           <% if user_signed_in? %>
             <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
             <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete%></li>
