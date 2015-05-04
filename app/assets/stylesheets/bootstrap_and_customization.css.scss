@@ -31,7 +31,9 @@ $navbar-inverse-bg: #daece5;
 
 
 
-
+.jumbotron {
+  border: solid black 1px;
+}
 
 
 
@@ -191,6 +193,12 @@ nav a:hover {
   width:500px;
   padding-top:20px;
 }
+
+#third-section .panel {
+  background-color: white;
+  border-radius: 50px;
+}
+
 
 
 

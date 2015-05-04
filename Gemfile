@@ -16,6 +16,7 @@ gem "paperclip", "~> 4.2"
 gem 'masonry-rails'
 gem 'paperclip-av-transcoder'
 gem "devise", "~> 3.4.1"
+gem 'aws-sdk', '~> 2.0.41'
 
 group :development, :test do
   gem "sqlite3"
