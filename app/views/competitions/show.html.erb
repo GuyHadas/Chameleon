@@ -36,10 +36,12 @@ def date_view(date)
   }
 
   date[0] = months[date[0]]
+  date[1] += ","
 
   if date[1][0] == "0"
     date[1][0] = ""
   end
+
 
   return date.join(" ")
 
