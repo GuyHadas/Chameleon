@@ -1,3 +1,5 @@
+<load "to_dollars">
+
 <div id="show-competition">
   <div class="container">
     <div class="text-center">
@@ -26,11 +28,11 @@
           </tr>
           <tr>
             <th>Campaign Budget:</th>
-            <td><%= @competition.campaignbudget %></td>
+            <td><%= to_dollars(@competition.campaignbudget) %></td>
           </tr>
           <tr>
             <th>Campaign Timeline:</th>
-            <td><%= @competition.begindate %> - <%=@competition.enddate %></td>
+            <td><%= date_view(@competition.begindate) %> - <%= date_view(@competition.enddate) %></td>
           </tr>
           <tr>
             <th>Campaign Needs:</th>
